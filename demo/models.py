@@ -3,10 +3,9 @@ from django.db.models import sql, Q, QuerySet
 
 
 class SchoolQuery(sql.Query):
-
     def get_compiler(self, using=None, connection=None, elide_empty=True):
         q = self.clone()
-        q_expr = Q(**{"%s__pk__in" % 'school': {1}})
+        q_expr = Q(school_id=1)
         q.add_q(q_expr)
         return super(SchoolQuery, q).get_compiler(
             using=using, connection=connection, elide_empty=elide_empty

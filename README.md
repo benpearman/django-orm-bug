@@ -1,8 +1,7 @@
 Demonstration of ORM bug.
 
 1. `python manage.py migrate`
-2. Run the server
-3. Visit `/demo/`
+2. `python ./bug.py`
 
 Observe that the SQL query is
 
